@@ -1,29 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Aspect Systems - Coming Soon</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./style.css">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clean Modern Landing Page</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<!-- Canvas -->
-<canvas class="orb-canvas"></canvas>
-<!-- Overlay -->
-<div class="overlay">
-  <!-- Overlay inner wrapper -->
- 
+  <div class="orb-canvas"></div>
 
-</div>
-<!-- partial -->
-  <script type="module" src="./script.js"></script>
+  <button class="overlay__btn--colors">Change Colors</button>
 
+  <script src="https://cdn.skypack.dev/pixi.js@5.x"></script>
+  <script src="https://cdn.skypack.dev/@pixi/filter-kawase-blur@3.2.0"></script>
+  <script src="https://cdn.skypack.dev/simplex-noise@3.0.0"></script>
+  <script src="https://cdn.skypack.dev/hsl-to-hex"></script>
+  <script src="https://cdn.skypack.dev/debounce"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

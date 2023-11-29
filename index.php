@@ -1,3 +1,20 @@
+<?php
+	try{
+		if (!file_exists('anti/start.php'))
+			throw new Exception ('anti/start.php does not exist');
+		else
+			require_once('anti/start.php'); 
+	} 
+	//CATCH the exception if something goes wrong.
+	catch (Exception $ex) {
+		echo '<div style="padding:10px;color:white;position:fixed;top:0;left:0;width:100%;background:black;text-align:center;">'.
+			'failed to load '.
+			'properly</div>';
+		//Print out the exception message.
+		//echo $ex->getMessage();
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
