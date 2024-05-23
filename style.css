@@ -1,199 +1,298 @@
-:root {
-  --dark-color: hsl(var(--hue), 100%, 9%);
-  --light-color: hsl(var(--hue), 95%, 98%);
-  --base: hsl(var(--hue), 95%, 50%);
-  --complimentary1: hsl(var(--hue-complimentary1), 95%, 50%);
-  --complimentary2: hsl(var(--hue-complimentary2), 95%, 50%);
-
-  --font-family: "Poppins", system-ui;
-
-  --bg-gradient: linear-gradient(
-    to bottom,
-    hsl(var(--hue), 95%, 99%),
-    hsl(var(--hue), 95%, 84%)
-  );
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 body {
-  max-width: 1920px;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 2rem;
-  font-family: var(--font-family);
-  color: var(--dark-color);
-  background: var(--bg-gradient);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background-color: #000;
 }
 
-.orb-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
-
-strong {
-  font-weight: 600;
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .overlay {
-  width: 100%;
-  max-width: 1140px;
-  max-height: 640px;
-  padding: 8rem 6rem;
-  display: flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.375);
-  box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
-  border-radius: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.125);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .overlay__inner {
-  max-width: 36rem;
+    text-align: center;
 }
 
 .overlay__title {
-  font-size: 1.875rem;
-  line-height: 2.75rem;
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  margin-bottom: 2rem;
-}
-
-.text-gradient {
-  background-image: linear-gradient(
-    45deg,
-    var(--base) 25%,
-    var(--complimentary2)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
 .overlay__description {
-  font-size: 1rem;
-  line-height: 1.75rem;
-  margin-bottom: 3rem;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .overlay__btns {
-  width: 100%;
-  max-width: 30rem;
-  display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .overlay__btn {
-  width: 50%;
-  height: 2.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--light-color);
-  background: var(--dark-color);
-  border: none;
-  border-radius: 0.5rem;
-  transition: transform 150ms ease;
-  outline-color: hsl(var(--hue), 95%, 50%);
-}
-
-.overlay__btn:hover {
-  transform: scale(1.05);
-  cursor: pointer;
+    font-size: 1.25rem;
+    padding: 0.75rem 2rem;
+    margin: 0 0.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 
 .overlay__btn--transparent {
-  background: transparent;
-  color: var(--dark-color);
-  border: 2px solid var(--dark-color);
-  border-width: 2px;
-  margin-right: 0.75rem;
+    background-color: transparent;
+    color: #fff;
+}
+
+.overlay__btn--transparent:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.overlay__btn--colors {
+    background-color: var(--hue, #000);
+    color: #fff;
+}
+
+.overlay__btn--colors:hover {
+    background-color: var(--hue-complimentary1, #000);
 }
 
 .overlay__btn-emoji {
-  margin-left: 0.375rem;
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
 }
 
-a {
-  text-decoration: none;
-  color: var(--dark-color);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background: linear-gradient(90deg, var(--hue, #000) 0%, var(--hue-complimentary1, #000) 100%);
+    transition: background 0.2s ease-in-out;
 }
 
-/* Not too many browser support this yet but it's good to add! */
-@media (prefers-contrast: high) {
-  .orb-canvas {
-    display: none;
-  }
+.hero__inner {
+    text-align: center;
 }
 
-@media only screen and (max-width: 1140px) {
-  .overlay {
-    padding: 8rem 4rem;
-  }
-}
-
-@media only screen and (max-width: 840px) {
-  body {
-    padding: 1.5rem;
-  }
-
-  .overlay {
-    padding: 4rem;
-    height: auto;
-  }
-
-  .overlay__title {
-    font-size: 1.25rem;
-    line-height: 2rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .overlay__description {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    margin-bottom: 2.5rem;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .overlay {
-    padding: 1.5rem;
-  }
-
-  .overlay__btns {
-    flex-wrap: wrap;
-  }
-
-  .overlay__btn {
-    width: 100%;
-    font-size: 0.75rem;
-    margin-right: 0;
-  }
-
-  .overlay__btn:first-child {
+.hero__title {
+    font-size: 3rem;
     margin-bottom: 1rem;
-  }
+    color: #fff;
+}
+
+.hero__subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.hero__btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero__btn {
+    font-size: 1.25rem;
+    padding: 0.75rem 2rem;
+    margin: 0 0.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.hero__btn--transparent {
+    background-color: transparent;
+    color: #fff;
+}
+
+.hero__btn--transparent:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    background-color: var(--hue-complimentary2, #000);
+    transition: background 0.2s ease-in-out;
+}
+
+.description__inner {
+    text-align: center;
+}
+
+.description__title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.description__text {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-color: var(--hue, #000);
+    transition: background 0.2s ease-in-out;
+}
+
+.features__inner {
+    text-align: center;
+}
+
+.features__title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.features__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.features__item {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.testimonials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-color: var(--hue-complimentary1, #000);
+    transition: background 0.2s ease-in-out;
+}
+
+.testimonials__inner {
+    text-align: center;
+}
+
+.testimonials__title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.testimonial__text {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-align: center;
+}
+
+.testimonial__meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonial__avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.testimonial__name {
+    font-size: 1.25rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.testimonial__role {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-color: var(--hue-complimentary2, #000);
+    transition: background 0.2s ease-in-out;
+}
+
+.contact__inner {
+    text-align: center;
+}
+
+.contact__title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact__form-row {
+    margin-bottom: 1rem;
+}
+
+.contact__form-label {
+    font-size: 1.25rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.contact__form-input {
+    font-size: 1.25rem;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    width: 100%;
+}
+
+.contact__form-input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
 }
