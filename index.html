@@ -1,55 +1,102 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Aspect Systems - Coming Soon</title>
+  <title>Aspect Systems</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./style.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<!-- Canvas -->
-<canvas class="orb-canvas"></canvas>
-<!-- Overlay -->
-<div class="overlay">
-  <!-- Overlay inner wrapper -->
-  <div class="overlay__inner">
-    <!-- Title -->
-    <h1 class="overlay__title">
-      Hey, we are workin on something
-      <span class="text-gradient">amazing</span>; innovative security
-    </h1>
-    <!-- Description -->
-    <p class="overlay__description">
-      Aspect Systems is a company that specializes in providing 
-      innovative cyber security solutions for everyone. 
-      <strong>We're gonna be available very soon, check back later.</strong>
-    </p>
-    <!-- Buttons -->
-    <div class="overlay__btns">
+  <!-- Navigation Bar -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="navbar__logo">Aspect Systems</div>
+      <div class="navbar__links">
+        <a href="#features">Features</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
 
-      <button class="overlay__btn overlay__btn--transparent">
-        <a href="https://discord.gg/aspect-systems-930476025933070356" target="_blank">
-
-          Contact Us
-        </a>
-      </button>
-
-      <button class="overlay__btn overlay__btn--colors">
-        <span>Randomise Colors</span>
-        <span class="overlay__btn-emoji">🎨</span>
-      </button>
+    <div class="header__content">
+      <div class="header__text">
+        <h1 class="header__title">
+          Improve your website's 
+          <span class="text-highlight">performance</span>
+        </h1>
+        <p class="header__description">
+          Lorem ipsum dolor sit amet consectetur congue libero nec aliquam posuere mattis laoreet sit odio pharetra lectus non ornare dis.
+        </p>
+        <div class="header__btns">
+          <button class="header__btn">
+            <a href="https://discord.gg/aspect-systems-930476025933070356" target="_blank">Get Started</a>
+          </button>
+          <button class="header__btn header__btn--secondary">
+            Contact us
+          </button>
+        </div>
+      </div>
+      <div class="header__image">
+        <img src="https://i.imgur.com/tzw9A8z.png" alt="Cyber Security">
+      </div>
     </div>
-  </div>
-</div>
-<!-- partial -->
-  <script type="module" src="./script.js"></script>
 
+    <!-- New Section -->
+    <div class="trusted-by">
+      <p>Used by the largest design teams in the world</p>
+      <div class="trusted-by__logos">
+        <div class="trusted-by__logo">agency</div>
+        <div class="trusted-by__logo">application</div>
+        <div class="trusted-by__logo">business</div>
+        <div class="trusted-by__logo">company</div>
+        <div class="trusted-by__logo">enterprise</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="features__grid">
+      <div class="feature">
+        <h3>Real-time Protection</h3>
+        <p>Our solutions offer real-time protection against cyber threats.</p>
+      </div>
+      <div class="feature">
+        <h3>Advanced Analytics</h3>
+        <p>Utilize advanced analytics to stay ahead of potential security breaches.</p>
+      </div>
+      <div class="feature">
+        <h3>Seamless Integration</h3>
+        <p>Easily integrate our solutions into your existing infrastructure.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
+    <blockquote>
+      "Aspect Systems transformed our security strategy, making us more resilient than ever."
+      <footer>– Alex Doe, CEO of Tech Innovators</footer>
+    </blockquote>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section id="contact" class="cta">
+    <h2>Stay Updated</h2>
+    <p>Subscribe to our newsletter to stay updated on our launch.</p>
+    <div class="cta__form">
+      <input type="email" placeholder="Enter your email">
+      <button>Subscribe</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Aspect Systems. All rights reserved.</p>
+  </footer>
+
+  <script type="module" src="./script.js"></script>
 </body>
 </html>
